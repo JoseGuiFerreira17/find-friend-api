@@ -17,10 +17,10 @@ export class FetchNearbyOrganizationsService {
     userLatitude,
     userLongitude,
   }: FetchNearbyOrganizationsServiceRequest): Promise<FetchNearbyOrganizationsServiceResponse> {
-    const organizations = await this.organizationsRepository.findManyNearby(
-      userLatitude,
-      userLongitude,
-    );
+    const organizations = await this.organizationsRepository.findManyNearby({
+      latitude: userLatitude,
+      longitude: userLongitude,
+    });
 
     return { organizations };
   }
