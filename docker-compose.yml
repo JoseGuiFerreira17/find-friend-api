@@ -1,0 +1,15 @@
+services:
+  friend-api-pg:
+    image: bitnami/postgresql:latest
+    environment:
+      - POSTGRESQL_USERNAME=${POSTGRESQL_USERNAME}
+      - POSTGRESQL_PASSWORD=${POSTGRESQL_PASSWORD}
+      - POSTGRESQL_DATABASE=${POSTGRESQL_DATABASE}
+    ports:
+      - 5432:5432
+    volumes:
+      - friend_pg_data:/bitnami/postgresql
+
+volumes:
+  friend_pg_data:
+    driver: local
