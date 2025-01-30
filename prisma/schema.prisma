@@ -36,7 +36,7 @@ model Pet {
   breed           String
   energy_level    String
   environment     String
-  available       Boolean
+  avaliable       Boolean
   organization_id String
   created_at      DateTime @default(now())
   updated_at      DateTime @updatedAt
