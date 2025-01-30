@@ -11,7 +11,7 @@ interface PetServiceRequest {
   breed: string;
   energy_level: string;
   environment: string;
-  available: boolean;
+  avaliable: boolean;
   organization_id: string;
 }
 
@@ -33,7 +33,7 @@ export class CreatePetService {
     breed,
     energy_level,
     environment,
-    available,
+    avaliable,
     organization_id,
   }: PetServiceRequest): Promise<PetServiceResponse> {
     const organization =
@@ -51,7 +51,7 @@ export class CreatePetService {
       breed,
       energy_level,
       environment,
-      available,
+      avaliable,
       organization_id,
     });
 
