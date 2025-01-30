@@ -12,8 +12,8 @@ CREATE TABLE "organizations" (
     "street" TEXT NOT NULL,
     "latitude" DECIMAL(65,30) NOT NULL,
     "longitude" DECIMAL(65,30) NOT NULL,
-    "createdAt" TIMESTAMP(3) NOT NULL DEFAULT CURRENT_TIMESTAMP,
-    "updatedAt" TIMESTAMP(3) NOT NULL,
+    "created_at" TIMESTAMP(3) NOT NULL DEFAULT CURRENT_TIMESTAMP,
+    "updated_at" TIMESTAMP(3) NOT NULL,
 
     CONSTRAINT "organizations_pkey" PRIMARY KEY ("id")
 );
@@ -30,6 +30,8 @@ CREATE TABLE "pets" (
     "environment" TEXT NOT NULL,
     "available" BOOLEAN NOT NULL,
     "organization_id" TEXT NOT NULL,
+    "created_at" TIMESTAMP(3) NOT NULL DEFAULT CURRENT_TIMESTAMP,
+    "updated_at" TIMESTAMP(3) NOT NULL,
 
     CONSTRAINT "pets_pkey" PRIMARY KEY ("id")
 );

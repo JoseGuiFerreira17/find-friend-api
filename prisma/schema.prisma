@@ -20,15 +20,15 @@ model Organization {
   street        String
   latitude      Decimal
   longitude     Decimal
-  createdAt     DateTime @default(now())
-  updatedAt     DateTime @updatedAt
+  created_at    DateTime @default(now())
+  updated_at    DateTime @updatedAt
   pets          Pet[]
 
   @@map("organizations")
 }
 
 model Pet {
-  id              String  @id @default(uuid())
+  id              String   @id @default(uuid())
   name            String
   about           String
   age             String
@@ -38,6 +38,8 @@ model Pet {
   environment     String
   available       Boolean
   organization_id String
+  created_at      DateTime @default(now())
+  updated_at      DateTime @updatedAt
 
   organization Organization @relation(fields: [organization_id], references: [id])
 

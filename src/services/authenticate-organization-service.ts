@@ -3,7 +3,7 @@ import { compare } from 'bcryptjs';
 import { Organization } from '@prisma/client';
 import { InvalidCredentialsError } from './errors/invalid-credentials';
 
-interface AuthenticateOrganizationService {
+interface AuthenticateOrganizationServiceRequest {
   email: string;
   password: string;
 }
@@ -12,13 +12,13 @@ interface AuthenticateOrganizationServiceResponse {
   organization: Organization;
 }
 
-export class AutehnticateOrganizationService {
+export class AuthenticateOrganizationService {
   constructor(private organizationsRepository: OrganizationsRepository) {}
 
   async execute({
     email,
     password,
-  }: AuthenticateOrganizationService): Promise<AuthenticateOrganizationServiceResponse> {
+  }: AuthenticateOrganizationServiceRequest): Promise<AuthenticateOrganizationServiceResponse> {
     const organization = await this.organizationsRepository.findByEmail(email);
 
     if (!organization) {
